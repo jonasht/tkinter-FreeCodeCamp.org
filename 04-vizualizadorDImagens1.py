@@ -35,11 +35,11 @@ def Frente(imagem_numero):
     
     minha_lb.grid_forget()
     minha_lb = Label(image=imagem_lista[imagem_numero-1])
-    bt_frente = Button(janela, text='>>>', command=lambda: Frente(imagem_numero+1))
-    bt_tras = Button(janela, text='<<<', command=lambda: Tras(imagem_numero-1))
+    bt_frente = Button(janela, text='>>>', command=lambda: Frente(imagem_numero+1), fg='blue')
+    bt_tras = Button(janela, text='<<<', command=lambda: Tras(imagem_numero-1), fg='blue')
     
     if imagem_numero == len(imagem_lista):
-        bt_frente = Button(janela, text='>>>', state=DISABLED)
+        bt_frente = Button(janela, text='>>>', state=DISABLED, fg='blue')
         
     minha_lb.grid(row=0, column=0, columnspan=3)
     bt_tras.grid(row=1, column=0)
@@ -63,9 +63,9 @@ def Tras(imagem_numero):
     
 
 
-bt_tras = Button(janela, text='<<<', command=Tras, state=DISABLED)
-bt_sair = Button(janela, text='<SAIR>', command=janela.quit)
-bt_frente = Button(janela, text='>>>', command=lambda: Frente(0))
+bt_tras = Button(janela, text='<<<', command=Tras, state=DISABLED, fg='blue')
+bt_sair = Button(janela, text='<SAIR>', command=janela.quit, fg='blue')
+bt_frente = Button(janela, text='>>>', command=lambda: Frente(0), fg='blue')
 
 bt_tras.grid(row=1, column=0)
 bt_sair.grid(row=1, column=1)
